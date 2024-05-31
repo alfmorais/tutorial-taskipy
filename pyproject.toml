@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "src"
+version = "0.1.0"
+description = ""
+authors = ["alfmorais <alfredneto@hotmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.111.0"
+
+
+[tool.poetry.group.test.dependencies]
+taskipy = "^1.12.2"
+
+[tool.taskipy.tasks]
+up = { cmd = "uvicorn src.app:app --host 0.0.0.0 --port 8080 --reload", help = "running project" }
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
